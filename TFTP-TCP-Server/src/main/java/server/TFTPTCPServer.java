@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 
 public class TFTPTCPServer {
-    private static final int DEFAULT_PORT = 9000;
+    private static final int DEFAULT_PORT = 9222;
 
 
     public static void main(String[] args) {
