@@ -6,7 +6,6 @@ import java.net.*;
 public class TFTPTCPServer {
     private static final int DEFAULT_PORT = 9222;
 
-
     public static void main(String[] args) {
         int port = DEFAULT_PORT;
 
@@ -15,9 +14,10 @@ public class TFTPTCPServer {
 
             while (true) {
                 Socket clientSocket = serverSocket.accept();
+                // Ensuring multi-client functionality
                 new Thread(new TFTPTCPServerThread(clientSocket)).start();
             }
-        } catch (IOException e) {
+        } catch (IOException e) { // Exception handler
             System.err.println("Server exception: " + e.getMessage());
             e.printStackTrace();
         }
