@@ -13,7 +13,7 @@ public class TFTPTCPServer {
             System.out.println("Server started on port " + port);
 
             while (true) {
-                Socket clientSocket = serverSocket.accept();
+                Socket clientSocket = serverSocket.accept(); // Accepting client's connection
                 // Ensuring multi-client functionality
                 new Thread(new TFTPTCPServerThread(clientSocket)).start();
             }
